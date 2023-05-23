@@ -15,7 +15,19 @@ describe('SuperHeroDancerSpec', function () {
   });
 
   // test if it moves
-  it('should fly across the screen', function() {
-    console.log(superHeroDancer);
+  it('should fly across the screen', function () {
+    expect(superHeroDancer.$node.css('left')).to.be.equal('20px');
+    clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+
+    var expected;
+    if (superHeroDancer.direction === 'right') {
+      expected = superHeroDancer.left + superHeroDancer.speed;
+    } else {
+      expected = superHeroDancer.left - superHeroDancer.speed;
+    }
+
+    clock.tick(timeBetweenSteps);
+
+    expect(superHeroDancer.$node.css('left')).to.be.equal(expected + 'px');
   });
 });
