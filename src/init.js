@@ -1,6 +1,20 @@
 $(document).ready(function () {
   window.dancers = [];
+
+  $('.lineupButton').on('click', function (event) {
+    // line up dancers on the left of the screen
+    // dancer position = 0
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (window.dancers[i].left !== 0) {
+        // window.dancers[i].left -= window.dancers[i].speed;
+        window.dancers[i].left = 0;
+        window.dancers[i].lineup = true;
+      }
+    }
+  });
+
   $('.addDancerButton').on('click', function (event) {
+    console.log(window.dancers);
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -26,6 +40,7 @@ $(document).ready(function () {
       top, left, speed
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
 });
 
