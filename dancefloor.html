@@ -4,13 +4,28 @@
     <title>Object Dance Party</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
+
   </head>
   <body>
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>    </div>
+      <a
+        href="#"
+        class="addDancerButton"
+        data-dancer-maker-function-name="BlinkyDancer"
+      >
+        add a blinky dancer
+      </a>
+
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="SuperHeroDancer">
+        add a hero dancer
+      </a>
+    </div>
+
+    <script src="src/util.js"></script>
     <script src="src/init.js"></script>
+    <script src="src/Dancer.js"></script>
+    <script src="src/BlinkyDancer.js"></script>
+    <script src="src/SuperHeroDancer.js"></script>
   </body>
 </html>
