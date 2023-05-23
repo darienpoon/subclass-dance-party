@@ -24,5 +24,7 @@ SuperHeroDancer.prototype.step = function () {
     this.direction = 'left';
   }
 
+  console.log($('body').width());
+
   Dancer.prototype.setPosition.call(this, this.top, this.left);
 };
